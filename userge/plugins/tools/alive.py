@@ -65,6 +65,8 @@ def _get_mode() -> str:
 def _get_alive_text_and_markup(message: Message) -> Tuple[str, Optional[InlineKeyboardMarkup]]:
     markup = None
     output = f"""
+𝗛𝗔𝗡𝗭𝝣𝗥𝗚𝝣 𝙝𝙚𝙧𝙚 𝙖𝙣𝙙 𝙖𝙘𝙩𝙞𝙫𝙚𝙡𝙮 𝙨𝙚𝙧𝙫𝙚 𝙮𝙤𝙪 𝙨𝙞𝙧...
+
 **⏱ Aktif Sejak** : `{userge.uptime}`
 **💡 Versi UBot** : `{get_version()}`
 **⚙️ Mode** : `{_get_mode().upper()}`
