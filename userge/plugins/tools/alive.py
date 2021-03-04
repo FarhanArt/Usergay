@@ -67,7 +67,7 @@ def _get_alive_text_and_markup(message: Message) -> Tuple[str, Optional[InlineKe
     output = f"""
 𝗛𝗔𝗡𝗭𝝣𝗥𝗚𝝣 𝙝𝙚𝙧𝙚 𝙖𝙣𝙙 𝙖𝙘𝙩𝙞𝙫𝙚𝙡𝙮 𝙨𝙚𝙧𝙫𝙚 𝙮𝙤𝙪 𝙨𝙞𝙧...
 
-**⏱ Aktif Sejak** : `{userge.uptime}`
+**⏱ Aktif Sejak** : `17d, {userge.uptime}`
 **💡 Versi UBot** : `{get_version()}`
 **⚙️ Mode** : `{_get_mode().upper()}`
 
