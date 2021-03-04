@@ -37,25 +37,25 @@ async def who_is(message: Message):
     if from_user or from_chat is not None:
         pp_c = await message.client.get_profile_photos_count(from_user.id)
         message_out_str = "<b>USER INFO:</b>\n\n"
-        message_out_str += f"<b>🗣 First Name:</b> <code>{from_user.first_name}</code>\n"
-        message_out_str += f"<b>🗣 Last Name:</b> <code>{from_user.last_name}</code>\n"
-        message_out_str += f"<b>👤 Username:</b> @{from_user.username}\n"
+        message_out_str += f"<b>🗣 Nama Depan:</b> <code>{from_user.first_name}</code>\n"
+        message_out_str += f"<b>🗣 Nama Belakang:</b> <code>{from_user.last_name}</code>\n"
+        message_out_str += f"<b>👤 Tag Pengguna:</b> @{from_user.username}\n"
         message_out_str += f"<b>🏢 DC ID:</b> <code>{from_user.dc_id}</code>\n"
-        message_out_str += f"<b>🤖 Is Bot:</b> <code>{from_user.is_bot}</code>\n"
-        message_out_str += f"<b>🚫 Is Restricted:</b> <code>{from_user.is_scam}</code>\n"
-        message_out_str += "<b>✅ Is Verified by Telegram:</b> "
+        message_out_str += f"<b>🤖 Apakah Bot:</b> <code>{from_user.is_bot}</code>\n"
+        message_out_str += f"<b>🚫 Apakah Dibatasi:</b> <code>{from_user.is_scam}</code>\n"
+        message_out_str += "<b>✅ Diverifikasi oleh Telegram:</b> "
         message_out_str += f"<code>{from_user.is_verified}</code>\n"
-        message_out_str += f"<b>🕵️‍♂️ User ID:</b> <code>{from_user.id}</code>\n"
-        message_out_str += f"<b>🖼 Profile Photos:</b> <code>{pp_c}</code>\n"
+        message_out_str += f"<b>🕵️‍♂️ ID pengguna:</b> <code>{from_user.id}</code>\n"
+        message_out_str += f"<b>🖼 Foto Profil:</b> <code>{pp_c}</code>\n"
         try:
             cc_no = len(await message.client.get_common_chats(from_user.id))
         except BotMethodInvalid:
             pass
         else:
-            message_out_str += f"<b>👥 Common Chats:</b> <code>{cc_no}</code>\n"
+            message_out_str += f"<b>👥 Total Grub:</b> <code>{cc_no}</code>\n"
         message_out_str += f"<b>📝 Bio:</b> <code>{from_chat.bio}</code>\n\n"
-        message_out_str += f"<b>👁 Last Seen:</b> <code>{from_user.status}</code>\n"
-        message_out_str += "<b>🔗 Permanent Link To Profile:</b> "
+        message_out_str += f"<b>👁 Terakhir dilihat:</b> <code>{from_user.status}</code>\n"
+        message_out_str += "<b>🔗 Link Profil:</b> "
         message_out_str += f"<a href='tg://user?id={from_user.id}'>{from_user.first_name}</a>"
 
         s_perm = True
@@ -72,8 +72,8 @@ async def who_is(message: Message):
             os.remove(local_user_photo)
             await message.delete()
         else:
-            cuz = "NO DP Found"
+            cuz = "Tanpa Foto"
             if not s_perm:
-                cuz = "Chat Send Media Forbidden"
+                cuz = "Media Dilarang Disini!"
             message_out_str = "<b>📷 " + cuz + " 📷</b>\n\n" + message_out_str
             await message.edit(message_out_str)
