@@ -21,7 +21,7 @@ from userge import userge, Message
     'examples': ['{tr}purge', '{tr}purge -u', '{tr}purge [user_id | user_name]']},
     allow_bots=False, del_pre=True)
 async def purge_(message: Message):
-    await message.edit("`purging ...`")
+    await message.edit("`Sedang menghapus kenangan ...`")
     from_user_id = None
     if message.filtered_input_str:
         from_user_id = (await message.client.get_users(message.filtered_input_str)).id
@@ -70,5 +70,5 @@ async def purge_(message: Message):
         purged_messages_count += len(list_of_messages)
     end_t = datetime.now()
     time_taken_s = (end_t - start_t).seconds
-    out = f"<u>purged</u> {purged_messages_count} messages in {time_taken_s} seconds."
-    await message.edit(out, del_in=3)
+    out = f"<u>Berhasil menghapus</u> {purged_messages_count} kenangan dalam {time_taken_s} detik."
+    await message.edit(out, del_in=2)
