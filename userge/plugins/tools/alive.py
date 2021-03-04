@@ -65,8 +65,8 @@ def _get_mode() -> str:
 def _get_alive_text_and_markup(message: Message) -> Tuple[str, Optional[InlineKeyboardMarkup]]:
     markup = None
     output = f"""
-**⏱ Uptime** : `{userge.uptime}`
-**💡 Version** : `{get_version()}`
+**⏱ Aktif Sejak** : `{userge.uptime}`
+**💡 Versi UBot** : `{get_version()}`
 **⚙️ Mode** : `{_get_mode().upper()}`
 
 • **Sudo**: `{_parse_arg(Config.SUDO_ENABLED)}`
