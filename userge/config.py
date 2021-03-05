@@ -74,7 +74,7 @@ class Config:
     ALLOWED_CHATS = filters.chat([])
     ALLOW_ALL_PMS = True
     USE_USER_FOR_CLIENT_CHECKS = False
-    SUDO_ENABLED = False
+    SUDO_ENABLED = True
     SUDO_USERS: Set[int] = set()
     DISABLED_ALL = False
     DISABLED_CHATS: Set[int] = set()
@@ -97,5 +97,5 @@ def get_version() -> str:
         diff = list(_REPO.iter_commits(
             f'{Config.UPSTREAM_REMOTE}/master..HEAD'))
         if diff:
-            ver = f"{ver}-custom.{len(diff)}"
-    return ver + '@' + _REPO.active_branch.name
+            ver = f"{ver}-patch.{len(diff)}"
+    return ver + '-' + _REPO.active_branch.name
