@@ -97,5 +97,5 @@ def get_version() -> str:
         diff = list(_REPO.iter_commits(
             f'{Config.UPSTREAM_REMOTE}/master..HEAD'))
         if diff:
-            ver = f"{ver}-patch.{len(diff)}"
+            ver = f"{ver}.patch.{len(diff)}"
     return ver + '-' + _REPO.active_branch.name
