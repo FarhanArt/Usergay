@@ -18,7 +18,7 @@ from userge import userge, Message
     'usage': "just reply to any user message or add user_id or username",
     'examples': "{tr}whois [user_id | username]"}, allow_channels=False)
 async def who_is(message: Message):
-    await message.edit("`__Sedang menyelidiki pengguna, Tunggu sebentar!__`")
+    await message.edit("__Sedang menyelidiki pengguna, Tunggu sebentar!__")
     user_id = message.input_str
     if user_id:
         try:
